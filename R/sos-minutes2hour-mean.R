@@ -1,3 +1,5 @@
+library(methods)
+library(bitops)
 #install.packages("RCurl")
 library(RCurl)
 library(plyr)
@@ -26,7 +28,7 @@ pmsA003 <- read.csv(urlSensor, header = FALSE, sep = ";", quote = "\"")
 means<-aggregate(data=pmsA003,V6~V3, FUN=mean)
 
 observation<-''
-for (i in c(1:nrow(means))) { 
+for (i in c(1:nrow(means))) {
   observation<-paste(observation,means$V3[i],':',round(means$V6[i],2),sep='')
   if(i<nrow(means)) observation<-paste(observation,',',sep='')
 }
@@ -52,7 +54,7 @@ bme280 <- read.csv(urlSensor, header = FALSE, sep = ";", quote = "\"")
 means<-aggregate(data=bme280,V6~V3, FUN=mean)
 
 observation<-''
-for (i in c(1:nrow(means))) { 
+for (i in c(1:nrow(means))) {
   observation<-paste(observation,means$V3[i],':',round(means$V6[i],2),sep='')
   if(i<nrow(means)) observation<-paste(observation,',',sep='')
 }
@@ -68,4 +70,3 @@ myfile
 
 
 #quit(save = "no",status = 0)
-

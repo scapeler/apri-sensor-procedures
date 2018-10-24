@@ -1,14 +1,14 @@
 SYSTEMCODE="SCAPE604"
 SYSTEMPATH="/opt"
 
-LOGFILE=$SYSTEMPATH/$SYSTEMCODE/log/knmi_10min_actual_import.log
+LOGFILE=$SYSTEMPATH/$SYSTEMCODE/log/R_sos-minutes2hour-mean.log
 echo "Start procedure on: " `date` >>$LOGFILE
 
-cd $SYSTEMPATH/$SYSTEMCODE/knmi-data
+cd $SYSTEMPATH/$SYSTEMCODE/apri-sensor-procedures
 
-node index knmi_10min_actual_import.js >>$LOGFILE
+###node index knmi_10min_actual_import.js >>$LOGFILE
 
-Rscript knmi_10min_actual_import.R >>$LOGFILE
+Rscript R/sos-minutes2hour-mean.R >>$LOGFILE
 
 echo "End   procedure on: " `date` >>$LOGFILE
 exit 0
