@@ -12,9 +12,11 @@ endDate<-as.POSIXct(format(Sys.time(), "%Y%m%d%H"), format="%Y%m%d%H")
 persistDate<-endDate  # persist on hour as result from previous 60 minutes
 startDate<-endDate-3600
 endDate<-endDate-1  # HH:59:59
-startDateStr<-format(startDate,"%Y-%m-%dT%H:%M:%S%z")
-endDateStr<-format(endDate,"%Y-%m-%dT%H:%M:%S%z")
-persistDateStr<-format(persistDate,"%Y-%m-%dT%H:%M:%S%z")
+#startDateStr<-format(startDate,"%Y-%m-%dT%H:%M:%S%z")
+#endDateStr<-format(endDate,"%Y-%m-%dT%H:%M:%S%z")
+startDateStr<-paste(format(startDate,"%Y-%m-%dT%H:%M:%S",tz='UTC'),'.000Z',sep='')
+endDateStr<-paste(format(endDate,"%Y-%m-%dT%H:%M:%S",tz='UTC'),'.000Z',sep='')
+persistDateStr<-paste(format(persistDate,"%Y-%m-%dT%H:%M:%S",tz='UTC'),'.000Z',sep='')
 
 urlSensor<-paste("https://openiod.org/SCAPE604/openiod?SERVICE=WPS&REQUEST=Execute&identifier=transform_observation&action=getobservation"
 ,"&sensorsystem=apri-sensor-pmsa003"
