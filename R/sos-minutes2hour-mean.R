@@ -33,7 +33,8 @@ for (i in c(1:nrow(means))) {
   if(i<nrow(means)) observation<-paste(observation,',',sep='')
 }
 
-foiOut<-paste(foiInPmsa003,'H',sep='')
+#foiOut<-paste(foiInPmsa003,'H',sep='')
+foiOut<-paste(foiId,'H',sep='')
 urlOut<-'https://openiod.org/SCAPE604/openiod?SERVICE=WPS&REQUEST=Execute&identifier=transform_observation&action=insertom&sensorsystem=apri-sensor-pmsa003&offering=offering_0439_initial&commit=true';
 urlOut <- paste(urlOut,'&foi=',foiOut,'&observation=',observation,'&measurementTime=',persistDateStr,sep='');
 urlOut
@@ -59,7 +60,8 @@ for (i in c(1:nrow(means))) {
   if(i<nrow(means)) observation<-paste(observation,',',sep='')
 }
 
-foiOut<-paste(foiInBme280,'H',sep='')
+#foiOut<-paste(foiInBme280,'H',sep='')
+foiOut<-paste(foiId,'H',sep='')
 urlOut<-'https://openiod.org/SCAPE604/openiod?SERVICE=WPS&REQUEST=Execute&identifier=transform_observation&action=insertom&sensorsystem=apri-sensor-bme280&offering=offering_0439_initial&commit=true';
 urlOut <- paste(urlOut,'&foi=',foiOut,'&observation=',observation,'&measurementTime=',persistDateStr,sep='');
 urlOut
