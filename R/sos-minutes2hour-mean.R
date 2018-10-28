@@ -9,9 +9,6 @@ args <- commandArgs(trailingOnly = TRUE)
 print(args)
 print(args[1])
 print(args[2])
-if (nrow(args)!=2) {
-  print('argument(s) missing!') 
-}
 
 foiId<-args[1]  #"SCWM68C63A809492"
 sensorSystem<-args[2]  # e.g. apri-sensor-bme280 or apri-sensor-pmsa003
