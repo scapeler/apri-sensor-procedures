@@ -4,6 +4,15 @@ library(bitops)
 library(RCurl)
 library(plyr)
 
+# args: foiId sensorsystem e.g. SCWM68C63A809492 apri-sensor-bme280 or SCWM68C63A809492 apri-sensor-pmsa003
+args <- commandArgs(trailingOnly = TRUE)
+print(args)
+print(args[1])
+print(args[2])
+if (lengt(args)!=2) {
+  print('argument(s) missing!') 
+}
+
 foiId<-"SCWM68C63A809492"
 foiInPmsa003<-paste("apri-sensor-pmsa003_",foiId,sep='')
 foiInBme280<-paste("apri-sensor-bme280_",foiId,sep='')
